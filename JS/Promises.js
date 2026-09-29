@@ -5,22 +5,84 @@
 //*then is for fulfilled promise(consuming a promise) which accepts an callback function with one argument as the msg which will store the  reason in the resolve in promise.
 //*catch is for rejected promises(handling a promise) which works as the same like then.
 
-let p1=new Promise((res,rej)=>{
-    let a=10
-    if(a==10)
-        res("Promise resolved")
-    else
-        rej("Promise rejected")
+// let p1=new Promise((res,rej)=>{
+//     let a=10
+//     if(a==10)
+//         res("Promise resolved")
+//     else
+//         rej("Promise rejected")
 
-})
- //? To handle or consume promise we need then() and catch()
-p1.then(msg=>console.log(msg))
-p1.catch(err=>console.log(err))
+// })
+//  //? To handle or consume promise we need then() and catch()
+// p1.then(msg=>console.log(msg))
+// p1.catch(err=>console.log(err))
 
-//*only fro resolved promises:
-let p2=new Promise((res,rej)=>{
+// //*only fro resolved promises:
+// let p2=new Promise((res,rej)=>{
+//     setTimeout(() => {
+//         res("Promise resolved")
+        
+//     }, 2000);
+// }).then(msg=>console.log(msg)).catch(err=>console.log(err))
+
+//*Promise methods
+//accepts array as an argument.
+let p3 =Promise.reject("Promsie reject p3")
+let p4 =Promise.reject("Promsie reject p4")
+let p5 =Promise.resolve("Promsie resolved p5")
+
+
+// ?1. Promise.any():
+//returns resolved even if one promise is resolved. doesnt care about reject only searches for resolved promised.
+//works like arr.some() method
+
+Promise.any([p3,p4,p5])
+    .then(msg=>console.log(msg))
+    .catch(err=>console.log(err))
+
+//?2. Promise.all()
+//returns rejected even if one is rejected. doesnt care about resolved only cares about rejected.
+//works same like arr.every() method
+
+Promise.all([p3,p4,p5])
+    .then(msg=>console.log(msg))
+    .catch(err=>console.log(err))
+
+//?3. Promise.allSettled()
+//returns all the promise irrespective of its status
+
+Promise.allSettled([p3,p4,p5])
+    .then(msg=>console.log(msg))
+    .catch(err=>console.log(err))
+
+
+//?4. Promise.race():
+//returns the 1st promsie to complete.
+ let car=new Promise((res,rej)=>
+{
     setTimeout(() => {
-        res("Promise resolved")
+        res("Car won the race")
         
     }, 2000);
-}).then(msg=>console.log(msg)).catch(err=>console.log(err))
+})
+let bike=new Promise((res,rej)=>
+{
+    setTimeout(() => {
+        res("Car won the race")
+        
+    }, 1000);
+})
+let plane=new Promise((res,rej)=>
+{
+    setTimeout(() => {
+        rej("Car won the race")
+        
+    }, 1500);
+})
+
+Promise.race([bike,plane,car])
+.then(msg=>console.log(msg))
+.catch(err=>console.log(err))
+
+
+
