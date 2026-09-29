@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex</title>
+    <style>
+        body{
+            background-color: gainsboro;
+        }
+        .parent{
+            min-height: 90vh; /*fit-content makes the height to fit the content. height is only until the content is there. it works with height and not min-height. min height mentions the minimum height by the browser and max can be until the content height.*/
+            width: 80%;
+            background-color: snow;
+            box-shadow: 0px 0px 20px 10px black inset;
+            display: flex;
+            
+            /* Flex direction can be arranged by row or column where row is the default */
+            flex-direction: row;
+            /* flex-direction: column; */
+            
+
+            /* Allign the items in the y axis  */
+            align-items: flex-start; 
+            align-items: flex-end;
+            align-items: center; 
+            
+           /* 
+           flex-start is default and aligns the item at the top
+           flex-end alligns the item in the bottom of y axis.
+           center alligns the contents into the centre in the y axis */
+
+           /* Allign the items in x axis */
+           justify-content: flex-start; /*Aligns the item at the start of the x axis and is default*/
+           justify-content: flex-end;  /*Aligns the content at the end of the x axis.*/
+           justify-content: center;  /*Aligns the element at the centre of the x axis*/
+           justify-content: space-around;  /*aligns the item in a 1:2:2:1 ratio i.e., from the strat 1 and then 2 in between 2 consecutive blocks and at the end again 1*/
+           justify-content: space-between;  /*0:1:1:0 ratio alignment*/
+           justify-content: space-evenly;  /*1:1:1:1 ratio alignment*/
+
+           /* To make the elements not collapse within each other and make them come down while compressing the width of the screen */
+           flex-wrap: wrap;
+
+           /* To allign with respect to y axis in ratio value */
+           align-content: space-around;
+
+           padding: 20px 0px;
+           
+            
+
+        }
+
+        .parent .item{
+            height: 160px;
+            width: 160px;
+            box-shadow: 0px 0px 20px 10px black inset;
+            background-color: lightblue;
+            
+        } 
+        
+
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+    
+</body>
+</html>

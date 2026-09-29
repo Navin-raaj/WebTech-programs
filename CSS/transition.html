@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transition</title>
+    <style>
+        /* font-face is used to make our own font-style by downloading a font from dafontfree.io and making it as font-family and giving its file destination in the src property. */
+        @font-face {
+            font-family:"zh-cn";
+            src: url(zh-cn.ttf);
+        }
+        div{
+            padding: 0;
+            /* position: relative; */
+            transition: padding-left 3s linear ;
+        }
+        div:hover{
+            padding-left: 1200px;
+            
+        }
+        
+        /* img{
+            position: relative;
+            left: 0;
+            
+        }
+        img:hover{
+            left: 1000px;
+            transition: left 3s linear ; */
+
+        /* } */
+
+        h1{
+            text-align: center;
+            letter-spacing: 105px;
+        }
+        h1:hover{
+            font-family: 'zh-cn','Times New Roman', Times, serif;
+            color: maroon;
+            letter-spacing: 15px;
+            font-weight: 100;
+            text-shadow: 4px 7px 5px black;
+            transition: all 3s ease;
+
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <!-- Transition
+        
+        * Change in the css property over given period of time smoothly.
+        * Properties :
+            1.transition-property : property we want to do transition on. if all given, then every property will be selected.
+            2.transition-duration : Time taken to complete transition.
+            3.transition-timing-function : Speed curve to carry our changes(speed pattern).
+            4.transition-delay : delay in starting transition.
+
+            short-hand : transition : transition-property transition-duration transition-timimng-function delay(optional);
+    -->
+    <div>
+            <img src="https://i.pinimg.com/originals/fe/a9/2f/fea92f50aa6db93e3a5e9ae9aa27b2a7.gif" alt="">
+
+    </div>
+    <h1>Jspiders</h1>
+</body>
+</html>

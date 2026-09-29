@@ -1,0 +1,144 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pseudo-elements</title>
+        <style>
+            body{
+                background-color: black;
+                color: white;
+            }
+            h1{
+                text-align: center;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 3rem;
+                
+            }
+
+            /* First letter pseudo element */
+            h1::first-letter{
+                color: color-mix(red 70%, pink 30%);
+                text-transform: capitalize;
+                font-size: 4rem;
+            }
+
+            /* first line pseudo element */
+
+            p::first-line{
+                color: magenta;
+            }
+
+            h2{
+                display: inline-block;
+                margin-left: 45%;
+                position: relative;
+                font-size: 3rem;
+            }
+
+            /* before pseudo element */
+            h2::before{
+                content: "";
+                background-color: aqua;
+                height: 5px;
+                width: 100%;
+                display: inline-block;
+                position: absolute;
+                bottom: 0%;
+                transition: all 1s ease-in-out;
+                transform: scaleX(0);
+            }
+
+            h2:hover::before{
+                /* width: 100%; */
+                transform: scaleX(1);
+                
+            }
+
+            /* after pseudo element */
+            h2::after{
+                content: " Raaj";
+                color: bisque;
+            }
+
+            /* selection */
+            ::selection{
+                background-color: lightgreen;
+                color: rgb(235, 43, 43);
+            }
+
+            /* placeholder */
+            input{
+                padding: 5px;
+                width: 400px;
+                margin-left: 20%;
+                background-color: transparent;
+                border: 1px white solid;
+                outline: none;
+                border-radius: 15px;
+            }
+
+            input:focus{
+                border-color: rgba(128, 255, 0, 0.726);
+            }
+
+            input:focus::placeholder{
+                color: rgba(128, 255, 0, 0.726);
+            }
+            
+            /* marker */
+            li{
+                color: white; /*default marker is disc*/
+                /* marker: circle; */
+
+            }
+
+            li::marker{
+                content: "✔️";
+            }
+
+        </style>
+    </head>
+    <body>
+        <!-- 
+            Pseudo element:
+                * Used to select an HTML element part by part to apply CSS property.
+                * Types : 
+                    1.first-letter : changes the state of the first letter of the specified element.
+                    2.first-line : changes the state of the first line of the specified element.
+                    3.before : add content and styles it before the specified content or element. Content added using before and after pseudo elements cant be selected by the cursor.
+                    4.after : add content and styles it before the specified content or element
+                    5.selection : change the state of the elements when selected like to copy we select the text right that kind of select. We can either select a specific element and do it or we can simply use ::selection which will apply the settings to the whole webpage
+                    6.placeholder : used to target the placeholder in the input elements
+                    7.marker : used to change the state of the lists marker
+                * Syntax:
+                    select::pseudo-element{
+                        CSS prop
+                    }
+        -->
+
+        <h1>
+            jspiders
+        </h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt dicta quos sequi asperiores obcaecati facere cupiditate dolore eos ut, deserunt distinctio labore repellat consequatur, cum, voluptatum nemo nesciunt fugit reprehenderit?Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat quia quos illo impedit ipsa neque maiores, rem nesciunt et quam!
+        </p>
+
+        <h2>Navin</h2>
+
+        <input type="text" name="" id="" placeholder="Start typing">
+
+        
+       <ul>
+        <li>List Item</li>
+        <li>List Item</li>
+        <li>List Item</li>
+        <li>List Item</li>
+        <li>List Item</li>
+        <li>List Item</li>
+        <li>List Item</li>
+        <li>List Item</li>
+        <li>List Item</li>
+        <li>List Item</li>
+       </ul>
+    </body>
+    </html>

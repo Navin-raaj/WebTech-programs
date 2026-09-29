@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess</title>
+    <style>
+        .box{
+            border: 2px solid black;
+            height: 600px;
+            width: 600px;
+            display: grid;
+            grid-template-columns: repeat(8,1fr);
+
+
+        }
+        .white{
+            background-color: white;
+        }
+        .black{
+            background-color: black;
+        }
+
+    </style>
+</head>
+<body>
+    <script>
+        let div=document.createElement('div')
+        div.classList.add('box')
+        for(let i=1;i<=8;i++){
+            for(let j=1;j<=8;j++){
+                let box=document.createElement('div')
+                box.classList.add((i+j)%2==0?'black':'white')
+                div.append(box)
+            }
+        }
+        document.body.append(div)
+    </script>
+    
+</body>
+</html>

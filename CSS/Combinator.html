@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combinator</title>
+    <style>
+        .first-gen,.another-first-gen{
+            border: 2px black solid;
+            margin: 10px;
+            padding: 4px;
+        }
+
+        /* Descendant combinator */
+
+       /* .first-gen h1{
+        color: blueviolet;
+        font-size: 2rem;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        background-color: black;
+
+       }
+
+       .another-first-gen p{
+        color: pink;
+        font-family: cursive;
+        font-size: 3rem;
+
+       }
+
+       .first-gen .second-gen h1{
+        color: darkblue;
+        background-color: transparent;
+       } */
+
+
+
+       /* Child combinator */
+
+       .another-first-gen .second-gen>h1{
+        color: crimson;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-size: 3rem;
+       }
+
+       input:checked+label{
+        color:lime;
+       }
+
+       section{
+        height: 200px;
+        width: 200px;
+        border: 2px darkgreen solid;
+        margin: 10px;
+        padding: 5px;
+        display: inline-block;
+       }
+
+       input:checked ~ p{
+        color: aqua;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 20px;
+       }
+
+
+    </style>
+</head>
+<body>
+    <!-- Combinator:
+                -It is used to combine two or more selector to target an html element precisely
+                -Combines multiple selectors by create an realationship between selector.
+                -Types:
+                    1.Descendant combinator.
+                        -A member who belongs to same family.
+                        -It selects an HTML element which is descendant of specified selector.
+                        -It uses a single space to combine selectors.
+                        -Syntax:
+                            RefSel TarSel{
+                            CSS prop
+                            }
+
+
+                    2.Child combinator.
+                        -It selects an HTML element, if it is direct child to specified class.
+                        -It uses ">" to combine selectors.
+                        -Syntax:
+                            RefSel>targetSel{
+                            CSS prop
+                            }
+                    
+
+                    3.Adjacent sibling combinator / next sibling combinator.
+                        -It selects an HTML element if it is following immediately after the specified selector.
+                        -It uses "+" to combine selectors.
+                        -Syntax:
+                            RefSel+targetSel{
+                            CSS prop
+                            }
+
+
+                    4.General sibling combinator.
+                        -Selects all HTML emements, if the elements are following after the specified selector.
+                        -Uses '~' to combine selectors.
+                        -Syntax:
+                            RefSel~targetSel{
+                            CSS prop
+                            }  
+                    
+                
+                -->
+    <div class="first-gen">
+        <h1>This is hrithink</h1>
+        <p>This is hrithik's wife</p>
+        <div class="second-gen">
+            <h1>This is hrithik's son</h1>
+            <p>This is hrithik's daughter-in-law</p>
+            <div class="third-gen">
+                <h1>This is hrithik's grand-son</h1>
+                <p>This is hrithik's grand-daughter</p>
+            </div>
+            <h1>This is some gent in 1st-gen family.</h1>
+        </div>
+
+    </div>
+    <div class="another-first-gen">
+        <h1>This is abhishek</h1>
+        <p>This is abhishek's wife</p>
+        <div class="second-gen">
+            <h1>This is abhishek's son</h1>
+            <p>This is abhishek's daughter-in-law</p>
+            <div class="third-gen">
+                <h1>This is abhishek's grand-son</h1>
+                <p>This is abhishek's grand-daughter</p>
+            </div>
+            <h1>This is some gent in another-1st-gen family.</h1>
+        </div>
+
+    </div>
+    <div>
+        <p>Choose your option</p>
+        <input type="checkbox" name="" id="java">
+        <label for="java">Java</label>
+
+        <input type="checkbox" name="" id="sql">
+        <label for="sql">SQL</label>
+
+        <input type="checkbox" name="" id="web">
+        <label for="web">Web</label>
+    </div>
+
+    <!-- General sibling selectors. -->
+     <p>Choose one</p>
+     <section>
+        <input type="radio" name="" id="">
+        <label for="">Jspiders</label>
+        <p>java development</p>
+        <p>MERN Stack</p>
+        <p>Devops</p>
+     </section>
+     <section>
+        <input type="radio" name="" id="">
+        <label for="">Qspiders</label>
+        <p>java Testing</p>
+        <p>Python testing</p>
+     </section>
+     <section>
+        <input type="radio" name="" id="">
+        <label for="">Pyspiders</label>
+        <p>Python development</p>
+        <p>MERN Stack</p>
+        <p>Devops</p>
+     </section>
+    <pre>
+
+
+
+
+
+
+
+
+    </pre>
+</body>
+</html>

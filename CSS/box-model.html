@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box-model</title>
+
+    <style>
+        body{
+            background-color: color-mix(red 40%, white 60%); /*color mix in backgrund color*/
+            background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiqy-6lQi74xBhEa5jBLg5GsHs_gq8kDASBicFn8DyVQ&s=10); /*without the url, we cant paste url in the background image property*/
+            background-repeat: no-repeat; /*background repeat specifies how the bg image is to be replicated to cover the screen. no repeat stops repeating repeat x repeats it along x axis and repeat y repeats it along y axis. */
+            background-size: cover; /* background size specifies how the background image should fit in the browser. 'contain' makes it micro image 'auto' gives us the same size which is default and 'cover' stretches the image to fit in the browser.
+            percentage also can be specifies in the value section by using which we can zoom in and zoom out the image*/
+            background-position: -80px 0px; /*It is used to set a background image poistion. like after zooming in we want to move it to our desired pixel/spot, we can use this property to move its position.*/
+            background-attachment: fixed; /*by using this property we can make the background sticked to one place or make it scroll down when scrolling down. 'fixed' makes it stick to the page and lets only the content scroll down, 'scroll' is default and lets the bg image to be scrolled down as well which means we'll be getiing the background color after the whole image is scrolled down. 'local' makes the image larger so that while scrolling down the remaining image can be seen down.*/
+            backdrop-filter: blur(5px); /*backdrop-filter only works until there is content in the page, the filter wears off where the content ends. blur is a filter used to blur something.*/
+
+        }
+        a{
+            border: 1px black solid;
+            padding: 6px 15px;
+            /* padding: 6px 15px 6px 15px; */
+            /* padding-top: 6px; */
+            /* padding-right: 15px; */
+            /* padding-left: 10px; */
+            /* padding-bottom: 6px; */
+            /* padding: 10px 5px 15px; // it will take 5px for right and left */
+            text-decoration: none;
+            margin: 10px;
+        }
+        p{
+            font-size: 50px;
+            color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+    Box model: 
+        * Box model is illustration box,which wraps around each and evrery html element.
+        * Contains content,padding,margin and border.
+        * Directions- top, right, bottom and left.
+        * Mainly used in managing space.
+    -->
+
+    <a href="">Home</a>
+    <a href="">About</a>
+
+    <a href="">Fashion</a>
+    <a href="">Mobile</a>
+    <a href="">Electron</a>
+    <p>hello</p>
+    <p>hello</p>
+    <p>hello</p>
+    <p>hello</p>
+    
+    <p>hello</p>
+    <p>hello</p>
+    <p>hello</p>
+    <p>hello</p>
+    <p>hello</p>
+    <p>hello</p>
+    <p>hello</p>
+    <p>hello</p>
+    <p>hello</p>
+    <p>hello</p>
+    <p>hello</p>
+</body>
+</html>

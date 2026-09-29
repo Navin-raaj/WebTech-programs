@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        .parent-wrap{
+            display: flex;
+            height: 97vh;
+            width: 99%;
+            border: 1px transparent solid;
+        }
+
+        /* left wrap */
+        .wrap{
+            background-color: rgb(204, 202, 202);
+            /* width: 50%; */
+            height: 100%;
+            margin: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            border: 1px transparent solid;
+            box-shadow: 0px 0px 10px 2px black; 
+        }
+        .wrap:first-child{
+            width: 62%;
+            margin-left: 20px;
+            /* padding: 2px; */
+            /* margin-left: 15PX; */
+        }
+        .wrap:last-child{
+            width: 35%;
+            margin-right: 0px;
+        }
+        .container{
+            background-color: white;
+            height: 10vh;
+            width: 100%;
+            margin: 1px;
+            display: grid;
+            grid-template-rows: 3fr 1fr;
+            /* padding: 10px; */
+            /* flex-direction: column; */
+            /* box-sizing: 0px 0px 10px 5px white inset; */
+        }
+        .container:nth-child(1){
+            height: 70vh;
+        }
+        .container:nth-child(2){
+            height: 20vh;
+        }
+        .items{
+            
+            background-color: rgba(128, 128, 128, 0.551);
+            margin: 1px;
+            margin: 10px;
+            display: flex;
+
+        }
+        .items .child1,.child2{
+            background-color: white;
+            height: 100%;
+            width: 100%;
+            /* margin: 2px; */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            /* align-items: center; */
+            gap: 9px;
+
+        }
+
+
+        .items .child2{
+            justify-content: center;
+            align-items: center;
+        }
+        .items .child1 div{
+            height: 30%;
+            width: 95%;
+            background-color: rgba(128, 128, 128, 0.551);;
+            margin-left: 8px;
+
+            border-radius: 50px;
+
+        }
+        .items .child1 div:nth-child(1){
+            width: 80%;
+            /* margin-top: 20px; */
+        }
+
+        .child{
+            height: 80%;
+            width: 90%;
+            background-color: rgba(128, 128, 128, 0.551);;
+            align-items: center;
+            justify-content: center;
+            margin: 10px;
+            border-radius: 50px;
+        }
+
+        .wrap .container:nth-child(2){
+            
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            /* align-items: center; */
+            gap: 10px;
+            padding: 10px 0;
+        }
+
+        .container:nth-child(2) .items2{
+            background-color: rgba(128, 128, 128, 0.551);;
+            width: 85%;
+            height: 30px;
+            margin-left: 20px;
+            /* margin: 15px;
+            margin-bottom: 10px; */
+            border-radius: 50px;
+        }
+
+        .container:nth-child(2) .items2:nth-child(2){
+            width: 35%;
+        }
+        .container:nth-child(2) .items2:nth-child(3){
+            width: 70%;
+        }
+        .container:nth-child(2) .items2:nth-child(4){
+            width: 55%;
+        }
+
+        .container:nth-child(3){
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container:nth-child(3) .item{
+            width: 95%;
+            height: 70%;
+            background-color: rgba(128, 128, 128, 0.551);;
+            border-radius: 50px;
+            
+
+        }
+
+
+        /* right side wrap */
+        .parent-wrap .wrap:nth-child(2){
+            display: grid;
+            place-items: center;
+            grid-template-rows: 1fr 5fr;
+            /* flex-direction: column;
+            justify-content: center;
+            align-items: center; */
+            gap: 4px;
+        }
+
+        .wrap:nth-child(2) .right-container:first-child{
+            height: 100%;
+            width: 100%;
+            background-color: white;
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            place-items: center;
+            gap: 2px;
+
+
+
+        }
+
+        .wrap:nth-child(2) .right-container:last-child{
+            height: 100%;
+            width: 100%;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .wrap:nth-child(2) .right-container .top-right{
+            height: 100%;
+            width: 100%;
+            /* background-color: aliceblue; */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            /* align-items: center; */
+            gap: 10px;
+
+        }
+
+        .top-right-items{
+            height: 15%;
+            width: 90%;
+            background-color: rgba(128, 128, 128, 0.551);;
+            border-radius: 30px;
+            margin-left: 20px;
+        }
+
+        .top-right-items:last-child{
+            width: 60%;
+
+        }
+
+        .top-right:last-child{
+            align-items: center;
+        }
+
+        .profile{
+            height: 70%;
+            width: 70%;
+            border-radius: 50%;
+            background-color: rgba(128, 128, 128, 0.551);;
+        }
+
+        .bottom-right-item{
+            height: 90%;
+            width: 88%;
+            background-color: rgba(128, 128, 128, 0.551);;
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+    <!-- Animations
+        
+        * 
+    -->
+        <div class="parent-wrap">
+
+            <!-- left side wrap -->
+            <div class="wrap">
+                <div class="container">
+                    <div class="items">
+                    </div>
+                    <div class="items">
+                        <div class="child1">
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div class="child2">
+                            <div class="child"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="items2"></div>
+                    <div class="items2"></div>
+                    <div class="items2"></div>
+                    <div class="items2"></div>
+                </div>
+                <div class="container">
+                    <div class="item"></div>
+                </div>
+            </div>
+
+
+            <!-- right side wrap -->
+            <div class="wrap">
+                <div class="right-container">
+                    <div class="top-right">
+                        <div class="top-right-items"></div>
+                        <div class="top-right-items"></div>
+                    </div>
+                    <div class="top-right">
+                        <div class="profile"></div>
+                    </div>
+                </div>
+                <div class="right-container">
+                    <div class="bottom-right-item"></div>
+                </div>
+                
+            </div>
+        </div>
+</body>
+</html>

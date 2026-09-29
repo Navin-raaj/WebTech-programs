@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Propogation</title>
+    <style>
+        div{
+            background-color: black;
+            height: 500px;
+            width: 500px;
+            display: grid;
+            place-items: center;
+        }
+        section{
+            background-color: rgb(201, 22, 22);
+            height: 60%;
+            width: 60%;
+            display: grid;
+            place-items: center;
+        }
+
+        button{
+            height:20%;
+            width: 50%;
+
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <section>
+            <button>Click</button>
+        </section>
+    </div>
+    <script>
+
+        //the useCapture attribute in the addevemntlistener method is to tell whether to use capture phase or bubbling phase.
+        //by default it is false and is in bubbling phase, if given true it uses capture pphase.
+        //<!--*Capture phase : The event is targeted from parent to child. capture phase happens every time. in case of button, first div --> section --> button . this is how it is targeted.
+        //<!--*Bubbling phase :  its the reverse step. like the capture phase happens and then again it goes back from target to its parent.
+            //the flow will be : div --> section --> button --> section --> div.
+            // so when we click the button the section and div event also gets triggered either in capture phase or in bubbling phase acccording to the argumnet we've given.
+        // <!--? to prevent it from happening we use: event.stopPropogation method.
+        //<!--! It is not recommended to use stop propagation while using capturing phase becasue it wotn allow to go to the target element. It will stop in the parent class only
+
+        let div=document.querySelector('div')
+        let section=document.querySelector('section')
+        let btn=document.querySelector('button')
+
+        div.addEventListener('click',(e)=>{
+            e.stopPropagation();
+            console.log('div is clicked')
+
+        },
+        // true
+    )
+
+    section.addEventListener('click',(e)=>{
+        e.stopPropagation();
+        console.log('section is clicked')
+        },
+        // true
+    )
+
+    btn.addEventListener('click',(e)=>{
+        e.stopPropagation();
+        console.log('button is clicked')
+
+        },
+        // true
+    )
+    </script>
+</body>
+</html>

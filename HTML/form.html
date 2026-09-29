@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forms</title>
+</head>
+<body>
+    <form action="">
+
+    </form>
+    <!-- form elements
+        1.input: used to accept input data from users by type attribute.
+        1.1 placeholder
+        1.2 pattern is nothing but regex
+        1.3 minlength
+        1.4 maxlength
+        2.label: holds the purpose of creating a input field. label for an input tag. 
+    -->
+
+    <input type="text" id="uName" value="" required>
+    <label for="uName">name</label>
+    <p id="result"></p>
+    <input type="color" name="" id="color">
+    <label for="color"> Choose a color : </label> <!-- the for in label holds the id of the input tag that we want to connect it to. by doing so just by clicking the label we can access the input-->
+    <br><br>
+    <label for="date"> choose date</label>
+    <input type="date" name="" id="date"><br><br>
+    <label for="dateTime"> choose date and time</label>
+    <input type="datetime" name="" id="dateTime"><br><br>
+    <label for="detetimeLocal">choose date and time</label>
+    <input type="datetime-local" name="" id="datetimeLocal"><br><br>
+    <label for="uEmail">enter email</label>
+    <input type="email" name="" id="uEmail"><br><br>
+    <label for="uFile"> Choose file</label>
+    <input type="file" name="" id="uFile"><br><br>
+    <!-- <label for="uImage">Upload</label> -->
+    <input type="image" src="" alt=""><br><br>
+    <label for="uMonth"> choose month</label>
+    <input type="month" name="" id="uMonth"><br><br>
+    <label for="uNumber"> enter number</label>
+    <input type="number" name="" id="uNumber" min="18" max="60" step="2"><br><br> <!-- step will increse the number by the value we give in it when user clicks increase in the input tag -->
+    <label for="uPassword">Enter password</label>
+    <input type="password" name="" id="uPassword"><br><br>
+    <label for="uRange">Select range</label>
+    <input type="range" name="" id="uRange" max="100" value="20"><br><br> <!--max will restrict user from entering more than maximum numbers needed and vice versa for min -->
+    <label for="uSearch">search</label>
+    <input type="search" name="" id="uSearch" value="readOnly" readonly><br><br>
+    <label for="uTel">Tel</label>
+    <input type="tel" name="" id="uTel" maxlength="10" pattern="[0-9]+" title="write only number"><br><br> 
+    <label for="Utime">select time</label>
+    <input type="time" name="" id="uTime"><br><br>
+    <label for="uUrl">enter the url</label>
+    <input type="url" name="" id="uUrl" autocomplete="url"><br><br> <!-- autocomplete suggests when we type our input for 2nd time like we get suggestions when we try to enter our email id in some fields.-->
+    <label for="uWeek">select week</label>
+    <input type="week" name="" id="uWeek" spellcheck="true"><br><br> <!-- spellcheck checks the spelling for us-->
+    <input type="text" disabled><br><br> <!--disabled shows us the field but user cant access it -->
+
+    <p>choose your city</p>
+    <input list="city"> <!--we dont need to specify type cause it takes text as ddefault type. the options gives below inside the datalist's id should be the same as the value given in list attribute in the input tag-->
+    <datalist id="city">
+        <option value="chennai">
+        <option value="bangalore">
+        <option value="bangkok">
+        <option value="hyderabad"></option> <!-- if we only want to suggest to the user the name of the city we dont need an closing tag for it. if we enter any text inside the option tag, then it will be displayed in regular font below he city name. think of it like showing the state name below the city.-->
+    </datalist>
+
+    <p>mode of payment</p>
+    
+    
+    <!-- we connect the radio buttons to their labels by using the same id and for. when multiple radio buttons are given the same value in name, they become connected and we can only select one among many -->
+    
+
+    <ul style="list-style-type: none;">
+        <li>
+            <input type="radio" name="paymnetMode" id="cod"><label for="cod">cod</label>
+        </li>
+         <li>
+           <input type="radio" name="paymnetMode" id="emi"><label for="emi">emi</label>
+        </li>
+        <li>
+            <input type="radio" name="paymnetMode" id="netbanking"><label for="netbanking">net banking</label>
+        </li>
+        <li>
+            <input type="radio" name="paymnetMode" id="upi"><label for="upi">upi</label>
+        </li>
+        <li>
+            <input type="text" disabled>
+        </li>
+        <li>
+            <input type="radio" name="paymnetMode" id="plater"><label for="plater">pay later</label>
+        </li>
+    </ul>
+    <!-- checkbox -->
+    <p>place of preference</p>
+    <input type="checkbox" name="place" id="chennai" checked><label for="">chennai</label>
+    <input type="checkbox" name="place" id="bangalore"><label for="">bangalore</label>
+    <input type="checkbox" name="place" id="hyderabad"><label for="">hyderabad</label>
+    <input type="checkbox" name="place" id="pune"><label for="">pune</label>
+    <input type="checkbox" name="place" id="noida"><label for="">noida</label>
+
+    <!-- dropdown -->
+     <p>choose your choice</p>
+     <select name="" id="">
+        <option value="" hidden>-- choose here --</option>
+        <option value="2022" >2022</option>
+        <option value="2023" >2023</option>
+        <option value="2024" >2024</option>
+        <option value="2025" >2025</option>
+        <option value="2026" selected>2026</option>
+     </select>
+
+     <!-- long text -->
+      <p>add your comment</p>
+      <textarea name="" rows="10" cols="30" style="resize: none;" maxlength="150" id="comment"></textarea> <!-- whatever we give inside the tag it will be displayed on the text box. placeholder can also be added. the text box is resizable in ui i.e., the user can resize the text box. to prevent this we need css.-->
+      <p>remaining letters: <span id="wordCount">150</span></p>
+
+      <!-- buttons -->
+       <button>next</button>
+       <input type="submit" value="login">
+       <input type="reset" value="reset">
+
+    <script>
+        document.addEventListener("DOMContentLoaded",()=>{
+           const inp = document.getElementById("uName");
+            const resEle = document.getElementById("result");
+           inp.oninput = function(){
+            console.log(inp.value);
+            resEle.textContent=inp.value;
+            if(inp.value == "navin"){
+                resEle.textContent = "😊😊😊";
+            }
+            else{
+                resEle.textContent = "😒😒";
+            }
+           };
+       
+        
+        });
+
+        const ele=document.getElementById("comment");
+        ele.oninput=function(){
+            document.getElementById("wordCount").textContent = 150 - ele.value.length;
+        }
+    </script>
+    
+</body>
+</html>

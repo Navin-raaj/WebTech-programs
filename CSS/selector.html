@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selector</title>
+    <style>
+        h1{
+            font-size: 120px;
+            color: aqua;
+        }
+        #primary-para{
+            color: burlywood;
+            font-size: 50px;
+        }
+
+        .para{
+            color: magenta;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 20px;
+        }
+        .sec-para{
+            color: navy;
+            font-family: cursive;
+        }
+        input[type="text"]{
+            border: 2px red solid;
+        }
+        input[type="email"]{
+            border: 2px navajowhite solid;
+        }
+        input[type="password"]{
+            border: 2px skyblue solid;
+        }
+
+        h1, #primary-para, .sec-para, input[type="email"]{
+            font-weight: 2000;
+            /* color: black; */
+        }
+
+        *{
+            /* font-family: monospace; */
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+    Selector
+        *It is an method to select an HTML element to apply CSS property.
+        *Typesof selector:
+            1.Basic selectors.
+                a.Name/tag selector
+                    applying css property to an html elememt using its tag name.
+                b.Id selector
+                    -Applying css property to an html element using its id name. Id is unique no more than one tag can have  the same id.
+                    -It uses "#id_name" to apply css.
+                    -Id name should not start with number and should not contain any special characters except - and _.
+                    -Syntax: 
+                        <tag id="id_name"></tag>
+                c.class selector 
+                    -Applying css property using an "class_name".
+                    -It uses ".class_name" to apply css.
+                    -Class can be duplicated.
+                    -Subclasses are allowed.
+                d.type selector
+                    -Applying css property to the html element using its "type" attribute.
+                    -Generaly used to target form elements.
+                    -Syntax: 
+                        input[type="value"]{
+                        }
+                        <input type="value" />
+                e.group selector
+                    -Selecting multiple selectors to apply same css property.
+                    -Uses ',' between the selectors to combine them.
+                    -Syntax:
+                        sel1,sel2,sel3,...{
+                            //CSS property
+                        }
+                f.universla selector
+                    -Selecting all HTML elements available on the web page to apply the same css property, we use ubiversal selector.
+                    -Uses '*' to select all elements.
+            2.Advanced selectors.
+                a.combinator
+                b.pseudo class
+                c.pseudo element
+    -->
+    <h1>This element is using css property by its name</h1>
+    <p id="primary-para">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis, aliquid.</p>
+    <button onclick="changeColor()">change color</button>
+    <p class="para sec-para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum tenetur aperiam ratione animi quibusdam labore quis debitis aspernatur dolor modi odit impedit expedita veniam eligendi, obcaecati, molestias accusantium consequatur doloremque?</p>
+    <p class="sec-para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum tenetur aperiam ratione animi quibusdam labore quis debitis aspernatur dolor modi odit impedit expedita veniam eligendi, obcaecati, molestias accusantium consequatur doloremque?</p>
+    <input type="text" name="" id=""><br><br>
+    <input type="password" name="" id=""><br><br>
+    <input type="email" name="" id=""><br><br>  
+    <script>
+        const ele = document.getElementById("primary-para");
+        // ele.style.color='black';
+        let colorChanged = false
+        function changeColor(){
+            if(!colorChanged){
+            ele.style.color='lime';
+            colorChanged=true;
+        }
+            else{
+                ele.style.color = 'burlywood';
+                colorChanged=false;
+            }
+            
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+</head>
+<style>
+    .loader{
+        margin-top:20% ;
+        height: 35px;
+        width: 0%;
+        background: linear-gradient(25deg,lime,gold,magenta,red);
+        animation-name: loader;
+        animation-duration: 3s;
+        animation-timing-function: linear;
+        animation-iteration-count: 3; /*if we want the animation to be non-stop, we can give 'infinite'*/
+        animation-direction: alternate; /*1.noraml : default
+                                          2.reverse : will do it in reverse direction if 0 to 100 given, then it will play 100 to 0*/
+        animation-fill-mode: backwards; /*backwards is default, it will retain to the from properties if width 0 to 
+                                          100 given then the animation will retain width 0 . forwards retains the to properrty it will retain width*/
+        animation-delay: 2100ms; /*how much time after the page is loadede should the animation happen.*/
+
+        /* Short hand */
+        /* animation: animation-name,animation-duration,animation-timing-function,animation-iteration-count,animation-direction,animation-delay; */
+    }
+    @keyframes loader {
+        from{
+            width: 0;
+        }
+        to{
+            width: 100%;
+        }
+        
+    }
+
+    .loader:hover{
+        animation-play-state: paused; /*the animation should be paused or played.*/
+    }
+</style>
+<body>
+
+    <!-- 
+        Animations
+
+    * Used to animate an HTML element with more control in change in the CSS property.
+    * Uses '@keyframes' rule set to animate elements.
+    * Properties : 
+        1.animation-name : Name given to an animation.
+        2.animation-duration : Time taken to complete one animation.
+        3.animation-timing-function : change in the speed curve.
+        4.animation-iteration-count : Number of times repeatation.
+        5.animation-direction : Defines direction.
+        6.animation-fill-mode : Decide which propertty should retain.
+        7.animation-delay : Delay in starting the animation.
+        8.animation-play-state : decides whether animation should play/pause.
+
+    * Syntax : 
+        @keyframes identifier{
+        from{
+            initial CSS prop
+        }
+        to{
+            final CSS prop
+        }
+        }
+
+    -->
+    <div class="loader">
+
+    </div>
+</body>
+</html>

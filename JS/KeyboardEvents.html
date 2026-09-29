@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key board events</title>
+</head>
+<body>
+    <h1>Keyboard events using dom elements.</h1>
+    <div>Types : <br>
+        1.keypress ====> onkeypress <br>
+        2.keydown ===> onkeydown <br>
+        3.keyup ===> onkeyup
+
+    </div> <br>
+    <input type="text">
+
+    <script>
+        let input=document.querySelector('input')
+        input.onkeypress=e=>{ //2nd precedence
+            // console.log('You clicked something on the keyboard.')
+            // console.log(e.key)
+            console.log("key pressed")
+        }
+        input.onkeydown=e=>{ //1st precedence
+            // console.log('You clicked something on the keyboard.')
+            console.log("key down")
+        }
+
+        input.onkeyup=e=>{ //3rd precedence
+            // console.log('You clicked something on the keyboard.')
+            console.log("Key up")
+        }
+
+        //  input.onkeyup=e=>{ //it overrides the previous keyup method.
+        //     // console.log('You clicked something on the keyboard.')
+        //     console.log("Key is pressed up")
+        // }
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        .wrap{
+            height: 100vh;
+            width: 100%;
+            background-color: aquamarine;
+            display: grid;
+            /* grid-template-columns: 250px 250px 250px 250px;
+            grid-template-rows: 250px 250px 250px; */
+
+            /* grid-template-columns: 250px 250px 250px auto;
+            grid-template-rows: 250px auto 250px; */  /*auto fills the remaining space in the window*/
+
+
+            /* grid-template-columns: 1fr 2fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr ; //fr is fraction it divided the windows length and width in the ratio and assigns it to the specified values. */
+
+
+            /* grid-template-columns: repeat(4,1fr);
+            grid-template-rows: repeat(3,1fr);  //repeat(n,value) function repeats the value n number of times */
+
+            grid-template-columns: 200px 1fr 1fr 1fr;
+            grid-template-rows: 55px 5fr 1fr;
+
+            place-items: center;  /*Places the grid items in the exact center with respect to the cells. equivalent to justify content center and align item center*/
+
+
+            gap: 10px;
+        }
+        .wrap .sections{
+            height: 100%;
+            width: 100%;
+            display: flex;
+            background-color: aliceblue;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0px 0px 20px 5px black inset;
+            
+        }
+        header{
+            background-color: white;
+            /* By using the grid lines, we can place any element in any cell */
+            grid-column-start: 1;
+            grid-column-end: 5;
+            grid-row-start: 1;
+            grid-row-end: 2;
+        }
+        aside{
+            background-color: violet;
+            grid-row: 2/4;
+
+        }
+        article{
+            background-color: blueviolet;
+            /* grid-column-start: 2;
+            grid-column-end: 3; */
+            grid-column: 2/5;  /*2 is the start line and 3 is the end line.*/
+
+
+            /* grid-row-start: 3;
+            grid-row-end: 4; */
+            grid-row: 2/3;
+
+        }
+        footer{
+            background-color: cadetblue;
+            grid-column: 2/5;
+
+        }
+
+        p{
+            position: fixed;
+            height: 20px;
+            background-color: beige;
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <p class="sections">Header</p>
+    <section class="wrap">
+        <header class="sections">Header</header>
+        <aside class="sections">Aside</aside>
+        <article class="sections">Article</article>
+        <footer class="sections">Footer</footer>
+        <!-- <div class="sections"></div>
+        <div class="sections"></div>
+        <div class="sections"></div>
+        <div class="sections"></div>
+        <div class="sections"></div>
+        <div class="sections"></div>
+        <div class="sections"></div>
+        <div class="sections"></div> -->
+
+
+    </section>
+</body>
+</html>

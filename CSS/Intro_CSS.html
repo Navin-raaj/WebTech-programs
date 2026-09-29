@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intro to css</title>
+    <link rel="stylesheet" href="demo-style.css">
+    <style>
+        h1{
+            color: aquamarine;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 34px;
+            /* color: black;
+            color: brown; */
+
+        }
+    </style>
+</head>
+<body>
+    <!-- Type of CSS : 
+    
+    1.Inline CSS:
+        *Applying the css property directly inside the html element by using 'style' attribute.
+        *pros - This is type is having high precedence.
+        *cons - this is methods subjected only for one element.
+        *eg :  -->
+
+    <h1 style="color: aqua; font-size: 30px; font-family: 'Times New Roman', Times, serif;">hello</h1>
+    <h1 style="color: blueviolet; font-size: 50px; font-family: 'Times New Roman', Times, serif;">this is my first css page</h1>
+<!-- 
+    2.Internal CSS:
+        *Applying the css property inside the same html doc in <head> using <style></style>. 
+        *pros - Avoides unnecessary duplication css property.
+        *cons - This method applies css prop to only one html document, maintainability will be hard. -->
+
+    <h1>
+        this is an example
+    </h1>
+    <h1>
+        this is an internal css
+    </h1>
+    <p>hello</p>
+
+    <!-- 
+    3.External CSS:
+        *Applying the css property by keeping in seperate file.
+        *Linking by <link>.
+        *Can apply same css property to multiple html decument.
+    -->
+
+    <h2>This elementis getting css property from external file.</h2>
+
+
+</body>
+</html>

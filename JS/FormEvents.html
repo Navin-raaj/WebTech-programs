@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Events</title>
+</head>
+<body>
+    <h1>Form events using addEventListener()</h1>
+    <p>
+        Types: <br>
+        submit <br>
+        input <br>
+        change <br>
+    </p>
+    <form action="">
+        <input type="text">
+        <button>Submit</button> <!--The default value of the forms button is to reload the page. whenever we submit anything, the page will be reloaded.-->
+    </form>
+    <script>
+
+        //addEventListener('event',callBack,useCapture) //useCapture is boolean value
+
+        let form=document.querySelector('form')
+        let input=document.querySelector('input')
+        form.addEventListener('submit',(e)=>{
+            e.preventDefault() //prevents the default functionality of an event. in this case it stops the page from reloading everytime we click submit.
+            // console.log("Form submitted successfuly")
+            // console.log(input.value) //gives the value typed int he input field.
+
+        })
+
+        form.addEventListener('input',()=>{ //gets triggered whenever any input is given in the input field. even for every character daddition or deletion, the event will be triggerd.
+            // console.log(input.value)
+        })
+
+        form.addEventListener('change',()=>{ //only gets triggered when there has been any change in the input. gets triggered no matter in which inout field change has been done.
+            //prevents duplicate value. 
+            //will not be triggered if the input is not changed before submitting.
+            // console.log(input.value)
+        })
+    // <!--* To change the default behaviour of the body. to stop the pop up from the right click.
+
+        document.body.addEventListener('contextmenu',e=>{
+            e.preventDefault() //prevents the action only until there is html content in the browser because we've only targeted the body not the entire browser
+            // console.log("Rigth click is disabled")
+        })
+        
+    </script>
+</body>
+</html>

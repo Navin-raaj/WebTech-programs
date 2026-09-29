@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table</title>
+</head>
+<body>
+    <!-- Syntax
+     <table border="1" align="center" height="" width="x"// gives us the width corresponding to the window size cell-padding="10px" // gives us padding or space between two cells>
+        <tr>
+            <th> gives us the table heading i.e., it gives us the text in bold</th>
+            <th></th>
+            <th></th>
+        </tr>
+        <tr>
+            <td width="" height=""> gives us the table data i.e., gives us text in unbold</td>
+        </tr>
+    </table> -->
+    <!-- <table border="1" bgcolor="grey">
+        <tr bgcolor="darkgrey">
+          <th>hello</th>
+          <th>hello</th>
+          <th>hello</th>
+          <th>hello</th>
+        </tr>
+        <tr bgcolor="red">
+          <td>hello</td>
+          <td>hello</td>
+          <td>hello</td>
+          <td>hello</td>
+        </tr>
+
+    </table> -->
+
+    <table border="1"  align="center" style=" text-align: center; border-collapse: collapse;" cellpadding="10px" width="80%">
+        <tr bgcolor="darkgrey">
+            <th width="5px">hello</th> 
+            <!-- while using width, if used on one row it will be applied to every row, if multiple width given to multiple rows of the same col, the highest width is applied for every row. same with the height. 
+             colspan="number of row we want to merge" // merges rows
+             rowspan="number of col we want to merge"//row merge
+             we can only merge two consecutive cells
+             after merging we need to delete the duplicate data as it will be extending the table.
+             if we use colspan="2" then we dont have have give the td fro the next row as it will extend it to another row.-->
+            <th>hii</th>
+            <th>hkl</th>
+            <th>files</th>
+        </tr>
+         <tr>
+            <th width="10px">hello</th>
+            <th>hii</th>
+            <th>hkl</th>
+            <th>files</th>
+        </tr>
+    </table>
+    
+</body>
+</html>

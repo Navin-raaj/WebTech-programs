@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psuedo-class</title>
+    <style>
+
+        :root{
+            --primary-text-color : #8b8b8b;
+            /* This is a variable creating creating used to store certain desired colors or settings so that using the variable name we created in this block, wen can assign our desired color to whatever tag we want.
+            var() is to be used inside which the variable name will be given to access the variable while giving it in inside the selectors. */
+        }
+        
+        a{
+            display: block;
+            text-decoration: none;
+            line-height: 40px;
+            font-size: 20px;
+            
+            
+        }
+
+        .all-links>a:link{
+            color: crimson;
+
+        }
+        .all-links>a:active{
+            color: var(--primary-text-color); /*var() is to be used when using the variable we created in the root pseudo class at the top*/
+
+        }
+        .all-links>a:visited{
+            color: aquamarine;
+
+        }
+
+        .all-links>a:hover{
+            font-size: 2rem;
+            color: lavender;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            text-shadow: 5px 3px 5px rgba(0, 0, 0, 0.737);
+
+        }
+
+        button{
+            height: 30px;
+            width: 100px;
+            margin-left: 25%;
+            border: none;
+            background: linear-gradient(90deg,magenta,darkviolet);
+        }
+
+        button:active{
+            transform: scale(0.9);
+            transition: all 100ms linear;
+        }
+
+        button:hover{
+            color: white;
+            background: crimson;
+            outline: 3px indigo solid;
+            outline-offset: 3px;
+
+        }
+
+        input[type="radio"]:checked{
+            accent-color: cadetblue;
+            transform: scale(1.2);
+            transition: all 200ms ease-in-out;
+
+
+        }
+
+        .all-prod{
+            min-height: 50vh;
+            width: 100%;
+            background-color: gainsboro;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            gap: 20px;
+            align-content: space-evenly;
+            flex-wrap: wrap;
+            padding: 20px 0px;
+
+
+        }
+
+        .all-prod .card{
+            height: 90%;
+            width: 300px;
+            background-color: white;
+            text-align: center;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0px 0px 20px 10px black inset;
+        }
+
+        .all-prod .card>img{
+            width: 50%;
+        }
+
+        .card button{
+            width: 100%;
+            border: none;
+            height: 40px;
+            margin: 0;
+            background: lime;
+            font-size: 20px;
+        }
+
+        .card:has(.no-stock){
+            opacity: 0.6;
+            filter: grayscale(90%);
+        }
+
+        .card:has(.no-stock):hover{
+            cursor: not-allowed;
+        }
+        .card:has(.no-stock)>button:hover{
+            cursor: not-allowed;
+        }
+        .text p{
+            color: aqua;
+        }
+        .text:not(p){
+            color: burlywood;
+        }
+    </style>
+</head>
+<body>
+    <!--
+     Psuedo class
+        -These are used to select an whole HTML element based on links, user interaction, position of elements in document, to include, to exclude..
+        -Types:
+            1. link : used to change the state of unvisited links available on the web page.
+            2. visited : used to change the state of visited links available on the web page.
+            3. active : shows active status of an html element.
+            4. focus : used to change the state of an input element when focused i.e., when the cursor is in the input field, it is known as focused and if not, it is known as blurred state.
+            5. hover : used to change the state of an element on hovering over it.
+            6. first-child : used to change the state of the first child inside a group of elements.
+            7. last-child : used to change the state of the last child inside a group of elements.
+            8. nth-child : used to change the state of the nth child inside a group of elements.
+            9. nth-child(even/odd) : used to change the state of the even/odd child inside a group of elements.
+            10. checked : used to change the state when the input is checked i.e., when the input is clicked or ticked.
+            11. has() : used to change the state if the tag has specified class.
+            12. not() : used to change the state of every other classes or tags except the specified one.
+            13. root() : used to create variable name and store any certain values/designs so that it can be used later just by using its variable name.
+
+     -->
+     <div class="all-links">
+        <a href="https://www.google.com">Google</a>
+        <a href="https://www.facebook.com">Facebook</a>
+        <a href="https://www.x.com">X</a>
+        <a href="https://www.instagram.com">Instagram</a>
+        <a href="https://www.github.com">GitHub</a>
+        <a href="https://www.linkedin.com">LinkedIn</a>
+
+     </div>
+     <hr>
+     <button>
+        submit
+     </button>
+     <hr>
+     <style>
+        .primary-class>p:nth-child(odd){
+            color: red;
+            font-size: 30px;
+
+        }
+        .primary-class>p:nth-child(even){
+            color: darkgreen;
+            font-size: 20px;
+
+        }
+        .primary-class>p:nth-child(5){
+            color: darkblue;
+            font-size: 40px;
+
+        }
+        .primary-class>p:first-child{
+            color: skyblue;
+            font-size: 50px;
+
+        }
+        .primary-class>p:last-child{
+            color: darkgoldenrod;
+            font-size: 70px;
+
+        }
+     </style>
+     <div class="primary-class">
+     <p>This is child - 1</p>
+     <p>This is child - 2</p>
+     <p>This is child - 3</p>
+     <p>This is child - 4</p>
+     <p>This is child - 5</p>
+     <p>This is child - 6</p>
+     <p>This is child - 7</p>
+     <p>This is child - 8</p>
+     <p>This is child - 9</p>
+     <p>This is child - 10</p>
+
+     </div>
+
+     <p>Select a gender :</p>
+     <input type="radio" name="gender" id="male" value="Male"><label for="male">Male</label>
+     <input type="radio" name="gender" id="female" value="Female"><label for="female">Female</label>
+     <input type="radio" name="gender" id="others" value="Others"><label for="others">Others</label>
+     <br>
+     <br>
+     <h3>Selected gender : <span id="gen"></span></h3>
+     <script>
+        const genEle=document.getElementById("gen");
+        const allGen=document.getElementsByName("gender");
+        for(let i of allGen){
+            i.onchange = () => {
+                if(i.checked){
+                    genEle.innerText=i.value;
+                }
+            };
+        }
+     </script>
+
+
+     <div class="all-prod">
+        <div class="card">
+            <img src="https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-2000-2000,pr-true,f-auto,q-40,dpr-2/cms/product_variant/c1b9c271-b314-4b5e-8b4a-da79bbf3c513/India-Gate-Dubar-Basmati-Rice-Long-Slender-Grains.jpeg" alt="">
+            <h3>India gate rice</h3>
+            <p>
+                
+                Premium everyday rice for daily meals, Naturally aromatic with signature basmati fragrance, Naturally aged for superior texture and fluffiness, Long slender grains remain separate after cooking
+            </p>
+
+            <p>Net Qty : 1 pack (5kg)</p>
+            <h2>&#8377;141</h2>
+            <p class="stock">Available</p>
+            <button>Add</button>
+        </div>
+         <div class="card">
+            <img src="https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-2000-2000,pr-true,f-auto,q-40,dpr-2/cms/product_variant/c1b9c271-b314-4b5e-8b4a-da79bbf3c513/India-Gate-Dubar-Basmati-Rice-Long-Slender-Grains.jpeg" alt="">
+            <h3>India gate rice</h3>
+            <p>
+                
+                Premium everyday rice for daily meals, Naturally aromatic with signature basmati fragrance, Naturally aged for superior texture and fluffiness, Long slender grains remain separate after cooking
+            </p>
+
+            <p>Net Qty : 1 pack (5kg)</p>
+            <h2>&#8377;141</h2>
+            <p class="stock">In stock</p>
+            <button>Add</button>
+        </div>
+         <div class="card">
+            <img src="https://cdn.zeptonow.com/production/ik-seo/tr:w-470,ar-2000-2000,pr-true,f-auto,q-40,dpr-2/cms/product_variant/c1b9c271-b314-4b5e-8b4a-da79bbf3c513/India-Gate-Dubar-Basmati-Rice-Long-Slender-Grains.jpeg" alt="">
+            <h3>India gate rice</h3>
+            <p>
+                
+                Premium everyday rice for daily meals, Naturally aromatic with signature basmati fragrance, Naturally aged for superior texture and fluffiness, Long slender grains remain separate after cooking
+            </p>
+
+            <p>Net Qty : 1 pack (5kg)</p>
+            <h2>&#8377;141</h2>
+            <p class="stack no-stock">Out of Stock</p>
+            <button>Add</button>
+        </div>
+     </div>
+
+     <div class="text">
+        <h1>this is h1</h1>
+        <h2>This is h2</h2>
+        <p>This is a para</p>
+        <span>This is a span</span>
+        <p>This is 2nd para.</p>
+     </div>
+
+     <style>
+        input{
+            margin: 20px 60px;
+            border: 1px solid;
+            border-color: transparent transparent black transparent;
+            outline: none;
+            background-color: gainsboro;
+        }
+
+        input[type="text"]:focus{
+            background-color: lime;
+        }
+
+
+     </style>
+
+     <input type="text" name="" id="">
+     <input type="password" name="" id="">
+
+     <pre>
+
+
+
+
+
+
+
+
+
+     </pre>
+
+    
+</body>
+</html>

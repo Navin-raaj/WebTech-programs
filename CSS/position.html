@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Positions</title>
+    <style>
+        *{
+            background-color: rgb(86, 33, 33);
+            margin: 0;
+            
+        }
+        .parent{
+            /* margin-top: 10px; */
+            background-color: black;
+            height: 80vh;
+            width: 90%;
+            display: flex;
+            gap: 10px;
+            /* justify-content: space-between;
+            align-items: center; */
+            position: relative;
+
+        }
+
+        .child{
+            background-color: aqua;
+            color: antiquewhite;
+            display: flex;
+            height: 200px;
+            width: 200px;
+            align-items: center;
+            justify-content: center;
+            border: 2px white solid;
+            box-shadow: 0px 0px 10px 5px black inset;
+        }
+
+        .static{
+            position: static;
+        }
+
+        .relative{
+            position: relative;
+            top: 80px;
+            right: 100px;
+        }
+        .absolute{
+            position: absolute;
+            
+            bottom: 0;
+            right: 0;   
+
+        }
+        .sticky{
+            position: sticky;
+            top: 250px;
+            right: 250px;
+        }
+        .fixed{
+            position: fixed;
+            top: 200px;
+            right: 200px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Positions : 
+        * Position property defines the positioning method to an html element.
+        * Types : 
+            1.Static : No changes in the position of element. It is default.
+
+
+            2.Relative : Position if an element with respect to its initial/original position. It provides reference point to absolute element.
+            - It takes from the midpoint of the element. mid point is the starting point. the measurement is taken with respect to the mid point(0,0).
+            - Used to control the absolute element and to make minute change in position. acts as a ancestor element for absolute element.
+
+
+            3.Absolute : Position of an html element with respect to its ancestor element.
+            - Default ancestor is the browser window.
+            - The (0,0) will be the top of the window.
+            -By default the position will be top 0 and right 0.
+            -It floats and hides the element beneath it is collided with another elements.
+            -Since it is with respect to the window, no matter which device the browser is in irrespective of the width of the browser, it will be positioned. if positioned in center in one browser, it will remain in the center for every browser width as well.
+
+
+            4.Sticky : Position of an element with respect to its parent in sticked condition.
+            - It will be visible until and unless its parent class is visible in the browser. 
+            - The element will be sticked in a specified position until the parent class is in viewport.
+
+
+            5.Fixed : 
+    -->
+
+    <div class="parent">
+        <div class="child static">Static</div>
+        <div class="child relative">Relative</div>
+        <div class="child absolute">Absolute</div>
+        <div class="child sticky">Sticky</div>
+        <div class="child fixed">Fixed</div>
+    </div>
+    <pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </pre>
+    
+</body>
+</html>

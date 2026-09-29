@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Delegation</title>
+</head>
+<body>
+    <h1>Event delegation</h1>
+    <p>It is a process of adding one listener to the parent instead of adding mlultiple listeners to the child and achieve the same result with the help of the bubbling phase</p>
+    <script>
+        let names=['ania','aditya','navin','moni','kislay','priya','vivek','harshita','pragati','harish','kishore']
+        let ol=document.createElement('ol')
+        document.body.append(ol)
+        names.forEach(ele=>{
+            let li=document.createElement('li')
+            li.textContent=ele
+            // li.addEventListener('click',()=>{  //this is not recommended because this will create n no. of events. if we have 1000 items, 1000 events is to be created. Also if we want to add more li to the list, they wont have event listeners and the event wont be triggered for them. To overcome this problem, we go for event delegation.
+                // console.log(`You clicked on ${li.textContent}`)
+            // })
+            ol.append(li)
+        })
+
+        ol.addEventListener('click',(e)=>{
+            if(e.target.tagName==''){
+            console.log(`You clicked on ${e.target.textContent}`)
+        }
+        })
+
+        let p=document.createElement('p')
+        p.textContent="hii"
+        ol.append(p)
+
+        
+    </script>
+</body>
+</html>

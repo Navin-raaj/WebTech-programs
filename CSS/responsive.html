@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive</title>
+    <style>
+        *{
+            margin: 0;
+            box-sizing: border-box; /*it will make the margin and padiing work inside only this box.*/
+        }
+
+        section{
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .nav{
+            height: 10%;
+            width: 100%;
+            background-color: aqua;
+        }
+        .main{
+            height: 60%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            .content{
+                height: 100%;
+                width: 50%;
+                background-color: aquamarine;
+            }
+            .sub{
+                height: 100%;
+                width: 50%;
+                background-color: cadetblue;
+            }
+        }
+
+        .footer{
+            height: 30%;
+            width: 100%;
+            background-color: greenyellow;
+        }
+
+       /* Mobile */
+       @media screen and (max-width:425px){
+        .main{
+            flex-direction: column;
+            
+            
+
+        }
+        .main .content{
+                background-color: chartreuse;
+                width: 100%;
+            }
+        .main .sub{
+                background-color: chocolate;
+                width: 100%;
+            }
+        
+       }
+
+    </style>
+</head>
+<body>
+    <section>
+        <div class="nav"></div>
+        <div class="main">
+            <div class="content"></div>
+            <div class="sub"></div>
+        </div>
+        <div class="footer"></div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Division</title>
+    <style>
+        div{
+            border: 1px black solid;
+            margin: 20px 0px;
+        }
+
+
+        .border-prop{
+            border : 2px solid;
+            border-color: magenta crimson lime skyblue;
+             overflow: scroll; /* scroll means the extra content that may get out of the box can be scrolle dby the user, the content wont overflow out of the box.  
+            there are other properties like hiddens hides the extra content.
+            */
+        }
+
+        .border-outline{
+            
+            outline: 1px violet solid; /*outline is the line beyond the border. the border is displayed inside the specified values whereas the outline is displayed outside the specified value.*/
+            outline-offset: 10px; /*the outline offset is used to set the positioning of the outline. if given in positive then the outline is displayed outsidde the border and if given in negative then the outline is displayed inside the border.*/
+        }
+
+        .wrapper{
+          
+            width: 300px;
+            height: 300px;
+            margin: auto; /* auto is only applicable for div elements it alligns the content vetically centre*/
+            margin-top: 20px;
+            ;
+        }
+
+        .border-rad{
+            /* border-radius: 10px 30px 100px 150px; */
+            /* border-radius: 30px 30px 30px 30px/100px 50px; */
+            border-color: burlywood transparent crimson lime;
+            border-radius: 50%;
+            height: 50px;
+            width : 50px;
+            animation : load 1s linear infinite ;
+
+        }
+
+        @keyframes load {
+            from{
+                transform: rotate(0deg);
+            }
+
+            to{
+                transform: rotate(360deg);
+            }
+            
+        }
+        body{
+            background-color: rgb(237, 233, 233);
+        }
+
+        .shadow-out{
+            border: none;
+            background-color: white;
+            box-shadow: 5px 5px 10px black;
+            
+
+        }
+        .shadow-out-all{
+            border: none;
+            background-color: white;
+            box-shadow: 0px 0px 10px 10px black;
+           
+        }
+        .shadow-out-all-multi{
+            border: none;
+            background-color: white;
+            box-shadow: 5px 5px 10px lime, 10px 10px 10px crimson;
+            margin-bottom: 50px;
+        }
+
+        .shadow-inside{
+            box-shadow: 0px 0px 30px 10px black inset;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam sed sit doloribus voluptas et quia iure explicabo aliquam labore. Eveniet error harum saepe impedit beatae sunt. Quod harum nulla velit!</h1>
+    </div>
+    <div>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, tempore ut recusandae voluptates, ratione ex aut voluptate non facilis sequi libero perspiciatis molestias illo qui. Iure quisquam quam odit veritatis atque eius repellat deleniti, maiores impedit laborum illum ex magni consectetur, quod at temporibus, ducimus necessitatibus consequuntur cupiditate! Beatae.
+        </p>
+    </div>
+    <div class="wrapper">
+
+    </div>
+    <div class="wrapper border-prop"></div>
+    <div class="wrapper border-prop border-outline"></div>
+
+    <div class="wrapper border-rad"></div>
+    <div class="wrapper shadow-out"></div>
+    <div class="wrapper shadow-out-all"></div>
+    <div class="wrapper shadow-out-all-multi"></div>
+    <div class="wrapper shadow-inside"></div>
+
+    
+    
+</body>
+</html>

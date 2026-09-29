@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme change</title>
+    <style>
+        .blackTheme{
+            background-color: rgba(0, 0, 0, 0.815);
+            color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <button>Click to change theme</button>
+    <script>
+        let isWhite=true
+        let body=document.querySelector('body')
+        let btn=document.querySelector('button')
+        btn.addEventListener('click',()=>{
+            if(isWhite){
+                body.classList.add('blackTheme')
+                isWhite=false
+            }
+            else{
+                body.classList.remove('blackTheme')
+                isWhite=true
+            }
+        })
+       
+
+    </script>
+    
+</body>
+</html>
