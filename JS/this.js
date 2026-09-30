@@ -13,7 +13,7 @@ let arrow=()=>{
     console.log(this)
 }
 // arrow()//window
-// new arrow() //error cause arrow function does not have its own this keyword. it inherits the this keyword properties if it has an=y parent function.
+// new arrow() //error cause arrow function does not have its own this keyword. it inherits the this keyword properties if it has any parent function.
 
 // function demo1(){
 //     let arrow1=()=>{

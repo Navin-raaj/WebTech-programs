@@ -87,6 +87,7 @@ let obj2=new Object({
 //gives us only the keys of the object
 //retuens an array of the keys
 console.log(Object.keys(obj))
+console.log(Object.entries(obj))
 
 //? 2.values()
 // givesw us only the values of the object
@@ -142,7 +143,6 @@ const obj4={
 // console.log(Object.isFrozen(obj6)) //true
 // console.log(Object.isSealed(obj5)) //true
 // console.log(Object.isFrozen(obj5)) //false
-
 
 
 

@@ -34,13 +34,17 @@
 //displays a prompt to the user while loading the page.
 //it is synchronous meaning it will block the code after it before the user gives the input. the codes after will only execute after the input.
 //the value returned by the prompt is always string.
+// console.log("hello")
 // let a=Number(prompt("Enter value of a : "))
 // let b=Number(prompt("Enter value of b : "))
+// console.log("Hii")
 // console.log(a+b)
 
 //*2.alert():
 //displays a warning message while loading.
+// console.log("hello")
 // alert("this is a warning")
+// console.log("hello") 
 
 
 //*3.confirm():
@@ -49,32 +53,38 @@
 // let c=confirm("Are you sure")
 // console.log(c)
 
+
 //?setTimeout(callbackfunction,delay)
 //makes the code asynchronous.
 //makes the code inside the call back function execute after the dealy seconds.
 //retruns an timeout id using which w can cancel the settimeout and make it never happen.
-let stid=setTimeout(() => {
-    console.log("js")
-    demo()
+// let stid=setTimeout(() => {
+//     console.log("js")
+//     demo()
     
-}, 2000);
+// }, 2000);
 
-function demo(){
-    console.log("javascript")
-}
-clearTimeout(stid)
+// function demo(){
+//     console.log("javascript")
+// }
+// clearTimeout(stid)
 
 //?setInterval(callback function,interval)
 //makes the code inside the call back function repeat infinitely with the given interval.
 //works same as timeout,returns the id using which it can be stopped
 
-let stid1=setInterval(() => {
-    console.log("interval")
-    demo()
+// let stid1=setInterval(() => {
+//     console.log("interval")
+//     demo()
     
-}, 2000);
+// }, 2000);
 
-clearInterval(stid1)
+
+// setTimeout(()=>{
+//     clearInterval(stid1)
+
+
+// },9000)
 
 
 // for(let i=0;i<5;i++){
