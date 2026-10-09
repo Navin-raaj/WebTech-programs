@@ -40,7 +40,7 @@
 // console.log(p)
 // console.log(p[0].textContent)
 // console.log(p[2])
-
+-+
 
 //*4.querySelector():
 // let h11=document.querySelector('.para')
@@ -65,7 +65,7 @@
 
 // let paras=document.querySelectorAll('.para')
 // paras[3].textContent="para3"
-
+ 
 
 //?applying styles
 
@@ -77,8 +77,8 @@
 
 //!Generating html content
 //?createElement('tag)
-let h1=document.createElement('h1')
-h1.textContent="DOM"
+// let h1=document.createElement('h1')
+// h1.textContent="DOM"
 
 //?set attributes : setAttributes('attribute','value')
 //recomended for adding only ids.

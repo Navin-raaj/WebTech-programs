@@ -11,13 +11,12 @@
 //         res("Promise resolved")
 //     else
 //         rej("Promise rejected")
-
 // })
 //  //? To handle or consume promise we need then() and catch()
 // p1.then(msg=>console.log(msg))
 // p1.catch(err=>console.log(err))
 
-// //*only fro resolved promises:
+// //*only for resolved promises:
 // let p2=new Promise((res,rej)=>{
 //     setTimeout(() => {
 //         res("Promise resolved")
@@ -103,7 +102,7 @@
     
 // }).catch(err=>console.log(err)) //one catch block is enough for multiple then blocks.
 
-//*Using more than one then block leads to a concept called promise chaining. Using promise chaining is not recommended as we can't use 1000's of then block if we have 1000's of promises. To overcome this, we'll using async and await.
+//*Using more than one then block leads to a concept called promise chaining. Using promise chaining is not recommended as we can't use 1000's of then block if we have 1000's of promises. To overcome this, we'll be using async and await.
 
 
 //! async and await

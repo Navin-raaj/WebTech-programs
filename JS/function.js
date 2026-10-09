@@ -8,11 +8,8 @@
     //6.Callback function
     //7.Nested function
 
-
-
 //! 1.Normal Functions
-// Hoisting is possible only i9n normal function.
-
+// Hoisting is possible only in normal function.
 
 
 // function fname(){
@@ -73,13 +70,12 @@
 //     console.log("Arrow function")
 
 // }
-
 // arrow()
 
 //* Characteristics.
 //? i.No parameters.
 // let noParam=()=>{
-//     console.log("No paframeters.")
+//     console.log("No parameters.")
 // }
 
 //? ii.Single parameters
@@ -117,9 +113,9 @@
 
 
 //!4. IIFE : Immediately invoked function expression
-// Only function in js that can only be used once and cannot reuse.\
+// Only function in js that can only be used once and cannot reuse.
 //Wrap the entire function inside paranthesis.
-// let z=10; // only situation when semicolon is mandatory. if not used it will assume 100() which will give as functio not declared.Before using iife function the before codes are to be terminated.
+// let z=100; // only situation when semicolon is mandatory. if not used it will assume 100() which will give as function not declared.Before using iife function the before codes are to be terminated.
 // (function(a,b){
 //     console.log(z)
 //     console.log("IIFE")
@@ -133,9 +129,9 @@
 
 // ((function func4(){
 //     console.log("IIFE")
-// }))();
+// }))()
 
-
+// console.log(10)
 //!5. HOF : Higher order function
 //? function accepting another function as an argument
 // function add(a,b){
@@ -152,8 +148,8 @@
 
 // calculate(10,20,add)
 
-//? function returning another function
 
+//? function returning another function
 
 //Ex : 1
 // function demo(){
@@ -209,6 +205,28 @@
 //     inner()
 // }
 // outer()
+
+//! Closure
+//It is responsible for remmebering the outer functions decalrations.
+//It is only generated when the inner function is trying to access th eouter functions variables.
+function outer(){
+    let count=0;
+    function inner(){
+        count++;
+        console.log(count)
+    }
+    return inner;
+}
+
+let res=outer()
+res()
+res()
+res()
+res()
+res()
+res()
+
+
 
 
 
